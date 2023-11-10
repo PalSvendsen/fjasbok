@@ -14,7 +14,7 @@ function viewProfile(index) {
 }
 
 function goBack() {
-    updateView(); // This function updates the main user list view
+    updateView(); 
 }
 
 
