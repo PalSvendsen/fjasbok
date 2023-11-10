@@ -9,7 +9,13 @@ function viewProfile(index) {
         <p><strong>Age:</strong> ${user.age}</p>
         <p><strong>Mail:</strong> ${user.mail}</p>
         <p><strong>Friends:</strong> ${friendList}</p>
+        <button onclick="goBack()">Tilbake</button>
     `;
 }
+
+function goBack() {
+    updateView(); // This function updates the main user list view
+}
+
 
 
