@@ -9,11 +9,11 @@ function viewProfile(index) {
         <p><strong>Age:</strong> ${user.age}</p>
         <p><strong>Mail:</strong> ${user.mail}</p>
         <p><strong>Friends:</strong> ${friendList}</p>
-        <button onclick="goBack()">Tilbake</button>
+        <button onclick="backBtn()">Tilbake</button>
     `;
 }
 
-function goBack() {
+function backBtn() {
     updateView(); 
 }
 
