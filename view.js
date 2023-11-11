@@ -2,6 +2,11 @@ function updateView() {
     const appDiv = document.getElementById('app');
     appDiv.innerHTML = '';
 
+    const isUserLoggedIn = !!model.loggedInUser;
+
+    appDiv.innerHTML += /*html*/ `
+        <button onclick="addNewUserView()" ${isUserLoggedIn ? 'disabled' : ''}>Legg til ny bruker</button>`;
+
     if (model.loggedInUser) {
         const loggedInUserIndex = model.users.findIndex(user => user.name === model.loggedInUser);
         appDiv.innerHTML += /*html*/`
@@ -31,11 +36,9 @@ function updateView() {
 }
 
 function showRegistrationForm() {
-    // Hide the login form
     const loginForm = document.getElementById('app');
     loginForm.style.display = 'none';
 
-    // Show the registration form
     const registrationForm = document.getElementById('addUserForm');
     registrationForm.style.display = 'block';
 }
@@ -68,7 +71,6 @@ function addUser(event) {
     const newMail = newMailInput.value;
 
     if (newUsername.trim() !== '' && !model.users.find(user => user.name === newUsername)) {
-        // Add the new user to the model
         model.users.push({
             name: newUsername,
             age: newAge,
@@ -76,21 +78,20 @@ function addUser(event) {
             friends: [],
         });
 
-        // Clear the input fields
         newUsernameInput.value = '';
         newAgeInput.value = '';
         newMailInput.value = '';
-
-        // Update the view
+        
         updateView();
     } else {
-        alert('Invalid username. Please enter a unique username.');
+        alert('Feil brukernavn. Prøv igjen!');
     }
 }
 
 
+
 function login() {
-    const username = prompt('Enter your username:');
+    const username = prompt('Skriv brukernavn:');
     const validUsernames = model.users.map(user => user.name);
 
     if (username && validUsernames.includes(username)) {

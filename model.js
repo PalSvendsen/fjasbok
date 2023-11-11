@@ -1,4 +1,4 @@
-let model = {
+const model = {
     loggedInUser: "",
     users: [{
         name: "Marius",
