@@ -1,7 +1,7 @@
 function viewProfile(index) {
     const user = model.users[index];
     const friendList = user.friends.join(', ');
-    
+
     const profile = document.getElementById('app');
     profile.innerHTML = /*html*/`
         <h2>User Profile</h2>
@@ -16,6 +16,7 @@ function viewProfile(index) {
 function backBtn() {
     updateView(); 
 }
+
 
 
 

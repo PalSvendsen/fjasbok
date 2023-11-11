@@ -1,4 +1,5 @@
 let model = {
+    loggedInUser: "",
     users: [{
         name: "Marius",
         age: 29,
@@ -29,3 +30,4 @@ let model = {
         mail: '',
     }
 }
+
